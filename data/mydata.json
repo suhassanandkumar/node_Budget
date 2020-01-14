@@ -1,0 +1,38 @@
+{
+  "aa16aecc-51f5-441d-be8f-fe4b7f6324d8": {
+    "id": "aa16aecc-51f5-441d-be8f-fe4b7f6324d8",
+    "name": "Kumar",
+    "password": "500Kumar",
+    "email": "kumar@gmail.com"
+  },
+  "028be3ed-47e1-45b4-b58c-d558f23aa079": {
+    "id": "028be3ed-47e1-45b4-b58c-d558f23aa079",
+    "name": "suhas",
+    "password": "465Suhas",
+    "email": "suhas@mail.com"
+  },
+  "5733c69c-f793-43b2-b565-309f3e1f28ac": {
+    "id": "5733c69c-f793-43b2-b565-309f3e1f28ac",
+    "name": "suhassaku",
+    "password": "suku",
+    "email": "ssk@mail.com"
+  },
+  "1605d32f-3498-4a15-80b5-672936f23154": {
+    "id": "1605d32f-3498-4a15-80b5-672936f23154",
+    "name": "SSK",
+    "password": "suhu",
+    "email": "ssk@mail.com"
+  },
+  "ba07422b-87db-4d60-8152-22c247a46b8c": {
+    "id": "ba07422b-87db-4d60-8152-22c247a46b8c",
+    "name": "suku@",
+    "password": "suku",
+    "email": "suhu@mail.com"
+  },
+  "b009661a-a0b3-4c2f-8ec5-b976e8908261": {
+    "id": "b009661a-a0b3-4c2f-8ec5-b976e8908261",
+    "name": "hello1",
+    "password": "suh",
+    "email": "suh@gma.com"
+  }
+}
