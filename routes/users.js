@@ -2,8 +2,9 @@
 const userRoutes = (app, fs) => {
 
     // variables
-    const dataPath = './data/mydata.json';
-    const dataPath1 = './data/users.json';
+    var dataPath = '';
+    const dataPath1 = './data/transact.json';
+    const datapath = './data/mydata.json';
 
     // helper methods
     const readFile = (callback, returnJson = false, filePath = dataPath, encoding = 'utf8') => {
@@ -29,6 +30,7 @@ const userRoutes = (app, fs) => {
 
     // READ ---- mydata.json
     app.get('/users', (req, res) => {
+        dataPath = datapath;
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
                 throw err;
@@ -40,6 +42,7 @@ const userRoutes = (app, fs) => {
 
     // READ ---- users.json
     app.get('/data', (req, res) => {
+        dataPath = dataPath1;
         fs.readFile(dataPath1, 'utf8', (err, data) => {
             if (err) {
                 throw err;
@@ -49,8 +52,9 @@ const userRoutes = (app, fs) => {
         });
     });
 
-    // CREATE
+    // CREATE User
     app.post('/users', (req, res) => {
+        dataPath = datapath;
 
         readFile(data => {
             //const newUserId = Object.keys(data).length + 1;
@@ -65,9 +69,33 @@ const userRoutes = (app, fs) => {
             true);
     });
 
+    // Add New description
+    app.post('/data', (req, res) => {
+        dataPath = dataPath1;
+
+        readFile(data => {
+            //const newUserId = Object.keys(data).length + 1;
+            const userId = req.body.userId;
+            const tId = req.body.id;
+            var des = {description : req.body.description, amount: req.body.amount};
+            // add the new user
+            data[userId.toString()][tId.toString()] = des;
+            //data[newUserId.toString()] = req.body;
+
+            
+
+            writeFile(JSON.stringify(data, null, 2), () => {
+                res.status(200).send('New Receipt been Added');
+            });
+        },
+            true);
+    });
+
+
 
     // UPDATE
     app.put('/users/:id', (req, res) => {
+        dataPath = datapath;
 
         readFile(data => {
 
@@ -85,6 +113,7 @@ const userRoutes = (app, fs) => {
 
     // DELETE
     app.delete('/users/:id', (req, res) => {
+        dataPath = datapath;
 
         readFile(data => {
 
